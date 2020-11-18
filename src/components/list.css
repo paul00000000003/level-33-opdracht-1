@@ -7,6 +7,7 @@
 }
 
 .lijstjes {
+  width: 1300px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -14,13 +15,38 @@
 
 .lijstje {
   margin: 30px;
+  width: 650px;
+}
+
+.lijstje2 {
+  width: 500px;
+  margin-top: 30px;
 }
 
 .list-item,
-.mandje-item {
+.mandje-item,
+#nieuwItem {
   width: 300px;
   height: 2em;
   font-size: 20px;
+  list-style-type: none;
+}
+
+#nieuwItem {
+  margin: 20px;
+}
+
+#toevoegKnop {
+  height: 2em;
+  width: 300px;
+  font-size: 20px;
+}
+
+#deleteKnop {
+  height: 2em;
+  width: 300px;
+  font-size: 20px;
+  margin-top: 20px;
 }
 
 .list-item:nth-child(odd) {

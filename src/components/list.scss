@@ -1,38 +1,64 @@
-.algBoodschap {
-    font-size: 40px;
-    margin: auto;
-    background-color: black;
-    color: white;
-    text-align: center;
-}
-
-.lijstjes {
-    display: flex
-}
-
-.lijstje {
-    margin: 30px;
-}
-
-.list-item,
-.mandje-item {
-    width: 300px;
-    height: 2em;
-    font-size: 20px;
-}
-
-.list-item:nth-child(odd) {
-    background-color: rgb(207, 181, 207);
-}
-
-.list-item:nth-child(even) {
-    background-color: rgb(90, 71, 90);
-}
-
-.mandje-item:nth-child(odd) {
-    background-color: rgb(69, 69, 100);
-}
-
-.mandje-item:nth-child(even) {
-    background-color: blue;
-}
+                    .algBoodschap {
+                        font-size: 40px;
+                        margin: auto;
+                        background-color: black;
+                        color: white;
+                        text-align: center;
+                    }
+                    
+                    .lijstjes {
+                        width: 1300px;
+                        display: flex
+                    }
+                    
+                    .lijstje {
+                        margin: 30px;
+                        width: 650px;
+                    }
+                    
+                    .lijstje2 {
+                        width: 500px;
+                        margin-top: 30px;
+                    }
+                    
+                    .list-item,
+                    .mandje-item,
+                    #nieuwItem {
+                        width: 300px;
+                        height: 2em;
+                        font-size: 20px;
+                        list-style-type: none;
+                    }
+                    
+                    #nieuwItem {
+                        margin: 20px;
+                    }
+                    
+                    #toevoegKnop {
+                        height: 2em;
+                        width: 300px;
+                        font-size: 20px;
+                    }
+                    
+                    #deleteKnop {
+                        height: 2em;
+                        width: 300px;
+                        font-size: 20px;
+                        margin-top: 20px;
+                    }
+                    
+                    .list-item:nth-child(odd) {
+                        background-color: rgb(207, 181, 207);
+                    }
+                    
+                    .list-item:nth-child(even) {
+                        background-color: rgb(90, 71, 90);
+                    }
+                    
+                    .mandje-item:nth-child(odd) {
+                        background-color: rgb(69, 69, 100);
+                    }
+                    
+                    .mandje-item:nth-child(even) {
+                        background-color: blue;
+                    }

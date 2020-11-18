@@ -8,13 +8,17 @@ class List extends Component
 {
    constructor(){super()
                  this.state={groceryItems:[{id:1,
-                                            titel:"Rijst"},
+                                            titel:"Rijst",
+                                            amount : 1},
                                            {id:2,
-                                            titel:"Aardappelen"},
+                                            titel:"Aardappelen",
+                                            amount : 1},
                                            {id:3,
-                                            titel:"Melk"},
+                                            titel:"Melk",
+                                            amount : 1},
                                            {id:4,
-                                            titel:"mango's"}
+                                            titel:"mango's",
+                                            amount : 1}
                                         ],
                               winkelMandje:[],
                               nieuwItem : "" 
@@ -34,10 +38,21 @@ class List extends Component
    { let nieuwItem=document.getElementById("nieuwItem")
      let waarde=nieuwItem.value 
      if (waarde){ 
-          let nieuwId=this.state.groceryItems.length+1
-          let nieuwLijstje=this.state.groceryItems 
-          nieuwLijstje[nieuwId-1]={id:nieuwId,titel:waarde}
-          this.setState({groceryItmes:nieuwLijstje})
+          let controleArray=this.state.groceryItems; 
+          let refid=0
+          controleArray.map(item=>{if (item.titel.toUpperCase()===waarde.toUpperCase())
+                                          {item.amount+=1
+                                           refid=item.id}
+                                   return item})
+          if (refid===0)
+             {
+               let nieuwId=this.state.groceryItems.length+1
+               let nieuwLijstje=this.state.groceryItems 
+               nieuwLijstje[nieuwId-1]={id:nieuwId,titel:waarde,amount:1}
+               this.setState({groceryItems:nieuwLijstje})
+             }
+          else 
+          {this.setState({groceryItems:controleArray})}
           nieuwItem.value=""
         }
      else alert("Om een item toe te voegen moet je wel wat invullen")
@@ -65,9 +80,9 @@ class List extends Component
                           {groceryItems2}
                         </ul>
                       </div> 
-                      <div className="lijstje">
+                      <div className="lijstje2">
                         <h1>Winkelmandje</h1>
-                        <button onClick={this.leegWinkelmand}>Leeg de winkelmand</button>
+                        <button id="deleteKnop" onClick={this.leegWinkelmand}>Leeg de winkelmand</button>
                         <ul id="winkelmandje">
                             {winkelMandje2} 
                         </ul>
