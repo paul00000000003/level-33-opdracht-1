@@ -2,6 +2,7 @@ import React,{Component} from 'react'
 import ListItem from './ListItem'
 import Mandje from './Mandje'
 import "./list.css"
+import InputField from './InputField' 
 
 class List extends Component
 {
@@ -53,14 +54,13 @@ class List extends Component
        let groceryItems2=this.state.groceryItems.map(element => 
                    <ListItem key={element.id} item={element} clickItem={this.clickItem} className="list-item"/> )
        let winkelMandje2=this.state.winkelMandje.map(element =>
-                   <Mandje key={element.id} item={element} className="list-item"/>)
+                   <Mandje key={element.id} item={element} className="mandje-item"/>)
        return ( <div>
                    <h1 className="algBoodschap">Boodschappenlijst</h1>
                    <div className="lijstjes">
                       <div className="lijstje">
                         <h1>Boodschappenlijst</h1>
-                        <input id="nieuwItem" type="text" name="nieuwItem" placeholder="Voeg item toe"/> 
-                        <button onClick={this.voegItemToe}>Klik om item toe te voegen</button>
+                        <InputField voegItemToe={this.voegItemToe}/> 
                         <ul >
                           {groceryItems2}
                         </ul>

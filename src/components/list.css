@@ -15,4 +15,26 @@
 .lijstje {
   margin: 30px;
 }
+
+.list-item {
+  width: 300px;
+  height: 2em;
+  font-size: 20px;
+}
+
+.list-item:nth-child(odd) {
+  background-color: #cfb5cf;
+}
+
+.list-item:nth-child(even) {
+  background-color: #5a475a;
+}
+
+.mandje-item:nth-child(odd) {
+  background-color: #454564;
+}
+
+.mandje-item:nth-child(even) {
+  background-color: blue;
+}
 /*# sourceMappingURL=list.css.map */
