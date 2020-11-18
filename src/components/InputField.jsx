@@ -19,7 +19,3 @@ export default InputField
 
 
 
-
-
-
-export default InputField 
