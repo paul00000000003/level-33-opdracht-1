@@ -1,0 +1,18 @@
+.algBoodschap {
+  font-size: 40px;
+  margin: auto;
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+
+.lijstjes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.lijstje {
+  margin: 30px;
+}
+/*# sourceMappingURL=list.css.map */
