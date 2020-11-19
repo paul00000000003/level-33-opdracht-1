@@ -4,8 +4,12 @@ import Mandje from './Mandje'
 import "./list.css"
 import InputField from './InputField' 
 
+
+let refid=0
+let waarde=""
+
 class List extends Component
-{
+{  
    constructor(){super()
                  this.state={groceryItems:[{id:1,
                                             titel:"Rijst",
@@ -36,7 +40,7 @@ class List extends Component
 
    voegItemToe()
    { let nieuwItem=document.getElementById("nieuwItem")
-     let waarde=nieuwItem.value 
+     waarde=nieuwItem.value 
      if (waarde){ 
           let controleArray=this.state.groceryItems; 
           let refid=0
@@ -59,10 +63,38 @@ class List extends Component
    }
 
    clickItem(id)
-   { const boodschapItem=this.state.groceryItems[id-1]
-     let aangepastWinkelmandje=this.state.winkelMandje;
-     aangepastWinkelmandje.push(boodschapItem)
-     this.setState({winkelMandje:aangepastWinkelmandje})
+   { let winkelMandjeArr=this.state.winkelMandje
+     let doorgaan="J"
+     refid=0
+     if (winkelMandjeArr.length !== 0)
+         {
+         winkelMandjeArr.map(item => {
+                                      if (item.id===id)
+                                      if (this.state.groceryItems[id-1].amount === item.amount) 
+                                          { 
+                                            doorgaan="N"
+                                            alert("Deze boodschap ligt met bijbehorend aantal al in het winkelmandje")
+                                          }
+                                      else 
+                                      { doorgaan="pasAmountAan"
+                                        item.amount=this.state.groceryItems[id-1].amount 
+                                      }
+                                        }) 
+                                      }
+     if (doorgaan==='J')
+        {
+         const boodschapItem=this.state.groceryItems[id-1]
+         let aangepastWinkelmandje=this.state.winkelMandje;
+         aangepastWinkelmandje.push(boodschapItem)
+         this.setState({winkelMandje:aangepastWinkelmandje})
+        }
+     else 
+     {
+       if (doorgaan === "pasAmountAan")
+         {
+           this.setState({winkelMandje:winkelMandjeArr})
+         }
+     }
    }
 
    render(){
