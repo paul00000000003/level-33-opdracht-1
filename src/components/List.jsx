@@ -5,6 +5,7 @@ import "./list.css";
 import InputField from "./InputField";
 
 let waarde = "";
+let refid = 0;
 
 class List extends Component {
   constructor() {
@@ -33,7 +34,7 @@ class List extends Component {
     waarde = nieuwItem.value;
     if (waarde) {
       let controleArray = this.state.groceryItems;
-      let refid = 0;
+      refid = 0;
       controleArray.map((item) => {
         if (item.titel.toUpperCase() === waarde.toUpperCase()) {
           item.amount += 1;
@@ -83,35 +84,40 @@ class List extends Component {
     }
   }
 
+  /*
+  <div className="lijstjes">
+  <div className="lijstje">
+    <h1>Boodschappenlijst</h1>
+    <InputField voegItemToe={this.voegItemToe} />
+    <ul>{groceryItems2}</ul>
+  </div>
+  <div className="lijstje2">
+    <h1>Winkelmandje</h1>
+    <button id="deleteKnop" onClick={this.leegWinkelmand}>
+      Leeg de winkelmand
+    </button>
+    <ul id="winkelmandje">{winkelMandje2}</ul>
+  </div>
+</div>
+*/
+  /*
+let groceryItems2 = this.state.groceryItems.map((element) => (
+  <ListItem
+    key={element.id}
+    item={element}
+    clickItem={this.clickItem}
+    className="list-item"
+  />
+));
+let winkelMandje2 = this.state.winkelMandje.map((element) => (
+  <Mandje key={element.id} item={element} className="mandje-item" />
+));
+*/
+
   render() {
-    let groceryItems2 = this.state.groceryItems.map((element) => (
-      <ListItem
-        key={element.id}
-        item={element}
-        clickItem={this.clickItem}
-        className="list-item"
-      />
-    ));
-    let winkelMandje2 = this.state.winkelMandje.map((element) => (
-      <Mandje key={element.id} item={element} className="mandje-item" />
-    ));
     return (
       <div>
         <h1 className="algBoodschap">Boodschappenlijst</h1>
-        <div className="lijstjes">
-          <div className="lijstje">
-            <h1>Boodschappenlijst</h1>
-            <InputField voegItemToe={this.voegItemToe} />
-            <ul>{groceryItems2}</ul>
-          </div>
-          <div className="lijstje2">
-            <h1>Winkelmandje</h1>
-            <button id="deleteKnop" onClick={this.leegWinkelmand}>
-              Leeg de winkelmand
-            </button>
-            <ul id="winkelmandje">{winkelMandje2}</ul>
-          </div>
-        </div>
       </div>
     );
   }
