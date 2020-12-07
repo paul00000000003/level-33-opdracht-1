@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import ListItem from "./ListItem";
-import Mandje from "./Mandje";
+//import ListItem from "./ListItem";
+//import Mandje from "./Mandje";
 import "./list.css";
-import InputField from "./InputField";
+//import InputField from "./InputField";
 
 let waarde = "";
 let refid = 0;
@@ -25,6 +25,7 @@ class List extends Component {
     this.voegItemToe = this.voegItemToe.bind(this);
   }
 
+  /*
   leegWinkelmand() {
     this.setState({ winkelMandje: [] });
   }
@@ -83,7 +84,7 @@ class List extends Component {
       }
     }
   }
-
+*/
   /*
   <div className="lijstjes">
   <div className="lijstje">
