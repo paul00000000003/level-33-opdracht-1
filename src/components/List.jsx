@@ -20,9 +20,9 @@ class List extends Component {
       winkelMandje: [],
       nieuwItem: "",
     };
-    this.clickItem = this.clickItem.bind(this);
-    this.leegWinkelmand = this.leegWinkelmand.bind(this);
-    this.voegItemToe = this.voegItemToe.bind(this);
+    //this.clickItem = this.clickItem.bind(this);
+    //this.leegWinkelmand = this.leegWinkelmand.bind(this);
+    //this.voegItemToe = this.voegItemToe.bind(this);
   }
 
   /*
